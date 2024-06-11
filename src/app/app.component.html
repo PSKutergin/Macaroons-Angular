@@ -20,8 +20,10 @@ c5.06-5.064,7.852-11.824,7.852-19.028c0-7.204-2.792-13.96-7.852-19.028L300.188,2
       </section>
       <ul class="menu-list">
         <li class="menu-item"><a (click)="scrollTo(productsElement)">Пироженки</a></li>
-        <li class="menu-item"><a href="#advantages" (click)="scrollTo(advantagesElement)">О нас</a></li>
-        <li class="menu-item"><a href="#order" (click)="scrollTo(orderElement)">Оформить заказ</a></li>
+        <li class="menu-item">
+          <a (click)="scrollTo(advantagesElement.container.nativeElement)">О нас</a>
+        </li>
+        <li class="menu-item"><a (click)="scrollTo(orderElement)">Оформить заказ</a></li>
       </ul>
     </nav>
     <span class="phone">{{phoneNumber}}</span>
@@ -55,31 +57,7 @@ c5.06-5.064,7.852-11.824,7.852-19.028c0-7.204-2.792-13.96-7.852-19.028L300.188,2
   </section>
 </main>
 
-<article class="advantages" #advantagesElement>
-  <section class="container">
-    <section class="advantages-content">
-      <section class="advantages-info">
-        <h1 class="advantages-info-title">Мы печём для вас вкуснейшие макаруны уже более 10 лет</h1>
-        <section class="advantages-info-text">
-          Все пироженки мы готовим только из натуральных и качественных продуктов, без консервантов,
-          ароматизаторов, красителей. Используем в приготовлении сливочное масло 82,5%, без дрожжей,
-          маргарина,
-          разрыхлителей и улучшителей муки.
-        </section>
-      </section>
-      <section class="advantages-image">
-        <img src="assets/image/big-maccaroon.png" alt="Big maccaroon">
-      </section>
-    </section>
-    <section class="advantages-items">
-      <section class="advantages-item" *ngFor="let advantage of advantages; let i = index">
-        <section class="advantages-item-point">{{i + 1}}</section>
-        <h3 class="advantages-item-title">{{advantage.title}}</h3>
-        <section class="advantages-item-text">{{advantage.description}}</section>
-      </section>
-    </section>
-  </section>
-</article>
+<comp-advantages #advantagesElement></comp-advantages>
 
 <article class="products" #productsElement>
   <section class="container">
@@ -169,7 +147,7 @@ c5.06-5.064,7.852-11.824,7.852-19.028c0-7.204-2.792-13.96-7.852-19.028L300.188,2
 </footer>
 
 <section class="present" (mouseover)="showPresent = true" (mouseout)="showPresent = false">
-  <img src="assets/image/present.png" alt="Present">
+  <img src="assets/image/cart.png" alt="Present">
   <section class="speech" [class.show]="showPresent">
     Оформите заказ <span>и получите подарок!</span>
   </section>

@@ -1,23 +1,4 @@
-// Основные цвета темы
-$theme-color1: #eba8b1;
-$theme-color2: #ffefef;
-
-// Цвета текста
-$text-color1: #fff;
-$text-color2: #331907;
-$text-color3: #760c22;
-$text-color4: #e3acb4;
-
-// Остальные цвета
-$menu-item-color: #770b1d;
-$speech-color: #770a1d;
-$box-shadow-color: #82132880;
-
-* {
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
-}
+@import "../variables.scss";
 
 @font-face {
   font-family: Tavolga;
@@ -56,45 +37,6 @@ $box-shadow-color: #82132880;
   font-size: 16px;
   font-family: GilroyBold, sans-serif;
   color: $text-color1;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 30px;
-  box-sizing: border-box;
-}
-
-.button {
-  background: -moz-linear-gradient(
-    90deg,
-    rgb(113, 8, 30) 0%,
-    rgb(215, 72, 92) 100%
-  );
-  background: -webkit-linear-gradient(
-    90deg,
-    rgb(113, 8, 30) 0%,
-    rgb(215, 72, 92) 100%
-  );
-  background: -ms-linear-gradient(
-    90deg,
-    rgb(113, 8, 30) 0%,
-    rgb(215, 72, 92) 100%
-  );
-  background: linear-gradient(
-    90deg,
-    rgb(113, 8, 30) 0%,
-    rgb(215, 72, 92) 100%
-  ); /* Стандартное свойство для современных браузеров */
-  border: 0;
-  font-family: GilroyBold, sans-serif;
-  letter-spacing: 0.02em;
-  color: $text-color1;
-  transition: all 0.4s;
-
-  &:hover {
-    box-shadow: 0px 5px 9px 1px $box-shadow-color;
-  }
 }
 
 .header {
@@ -246,84 +188,6 @@ $box-shadow-color: #82132880;
 
       &::before {
         animation-delay: 0.5s;
-      }
-    }
-  }
-}
-
-.advantages {
-  background: $theme-color2;
-  padding: 120px 0;
-  position: relative;
-
-  .advantages-content {
-    display: flex;
-    align-items: flex-end;
-    margin-bottom: 83px;
-    justify-content: space-between;
-
-    .advantages-info {
-      max-width: 495px;
-
-      .advantages-info-title {
-        font-size: 42px;
-        font-family: Tavolga, sans-serif;
-        color: $text-color2;
-        line-height: 1.222;
-      }
-
-      .advantages-info-text {
-        font-size: 18px;
-        font-family: Gilroy, sans-serif;
-        color: $text-color2;
-        line-height: 1.556;
-        margin-top: 60px;
-        margin-bottom: 5px;
-        max-width: 401px;
-      }
-    }
-  }
-
-  .advantages-items {
-    display: grid;
-    grid-template: 1fr / repeat(4, 220px);
-    grid-column-gap: 87px;
-
-    .advantages-item {
-      .advantages-item-point {
-        width: 70px;
-        height: 70px;
-        border-radius: 50%;
-        text-align: center;
-        padding-top: 16px;
-        box-sizing: border-box;
-        background-color: #821328;
-        font-size: 60px;
-        font-family: GilroyExtraBold, sans-serif;
-        color: $text-color1;
-        transition: all 0.4s;
-      }
-
-      .advantages-item-title {
-        margin-top: 13px;
-        font-size: 20px;
-        font-family: GilroyExtraBold, sans-serif;
-        color: $text-color2;
-      }
-
-      .advantages-item-text {
-        margin-top: 20px;
-        font-size: 15px;
-        font-family: GilroyMedium, sans-serif;
-        color: $text-color2;
-        line-height: 1.333;
-      }
-
-      &:hover {
-        .advantages-item-point {
-          background-color: $box-shadow-color;
-          color: #821328;
-        }
       }
     }
   }
@@ -588,6 +452,10 @@ $box-shadow-color: #82132880;
   transition: all 0.4s;
   z-index: 2;
 
+  img {
+    width: 60%;
+  }
+
   .speech {
     font-size: 15px;
     font-family: GilroyMedium, sans-serif;
@@ -710,17 +578,6 @@ $box-shadow-color: #82132880;
     }
   }
 
-  .advantages {
-    .advantages-content {
-      justify-content: space-evenly;
-    }
-
-    .advantages-items {
-      grid-column-gap: 54px;
-      justify-content: center;
-    }
-  }
-
   .products {
     .products-items {
       grid-template-columns: repeat(auto-fill, 263px);
@@ -803,48 +660,6 @@ $box-shadow-color: #82132880;
       }
     }
   }
-
-  .advantages {
-    .advantages-content {
-      flex-direction: column;
-      align-items: center;
-
-      .advantages-info {
-        max-width: 900px;
-
-        .advantages-info-title {
-          max-width: 475px;
-          margin: 0 auto;
-          text-align: center;
-        }
-
-        .advantages-info-text {
-          max-width: 100%;
-          text-align: center;
-          margin-bottom: 40px;
-        }
-      }
-
-      .advantages-image {
-        img {
-          width: 100%;
-        }
-      }
-    }
-
-    .advantages-items {
-      grid-template: repeat(2, 1fr) / repeat(2, 220px);
-      grid-row-gap: 80px;
-
-      .advantages-item {
-        text-align: center;
-
-        .advantages-item-point {
-          margin: 0 auto;
-        }
-      }
-    }
-  }
 }
 
 /* 901 - 1023 */
@@ -853,18 +668,6 @@ $box-shadow-color: #82132880;
     .container {
       .main-image {
         right: 55px;
-      }
-    }
-  }
-
-  .advantages {
-    .advantages-content {
-      .advantages-info {
-        max-width: 672px;
-      }
-
-      .advantages-image {
-        width: 302px;
       }
     }
   }
@@ -977,33 +780,6 @@ $box-shadow-color: #82132880;
         &::before {
           width: 130px;
           height: 130px;
-        }
-      }
-    }
-  }
-
-  .advantages {
-    padding: 100px 0;
-
-    .advantages-content {
-      .advantages-info {
-        .advantages-info-title {
-          font-size: 32px;
-        }
-      }
-    }
-
-    .advantages-items {
-      grid-template: repeat(2, 1fr) / repeat(2, 165px);
-      grid-gap: 36px 15px;
-
-      .advantages-item {
-        .advantages-item-title {
-          font-size: 18px;
-        }
-
-        .advantages-item-text {
-          font-size: 13px;
         }
       }
     }
@@ -1187,18 +963,6 @@ $box-shadow-color: #82132880;
     }
   }
 
-  .advantages {
-    .advantages-content {
-      .advantages-info {
-        .advantages-info-text {
-          font-size: 16px;
-          margin-top: 40px;
-          margin-bottom: 59px;
-        }
-      }
-    }
-  }
-
   .order {
     .container {
       .order-form,
@@ -1228,35 +992,6 @@ $box-shadow-color: #82132880;
 
         .main-info-text {
           font-size: 15px;
-        }
-      }
-    }
-  }
-
-  .advantages {
-    .advantages-content {
-      .advantages-info {
-        .advantages-info-title {
-          font-size: 27px;
-        }
-
-        .advantages-info-text {
-          font-size: 13px;
-        }
-      }
-    }
-
-    .advantages-items {
-      grid-template: repeat(2, 1fr) / repeat(2, 1fr);
-      grid-gap: 36px 10px;
-
-      .advantages-item {
-        .advantages-item-title {
-          font-size: 16px;
-        }
-
-        .advantages-item-text {
-          font-size: 11px;
         }
       }
     }

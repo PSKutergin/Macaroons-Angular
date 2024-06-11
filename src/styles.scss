@@ -1,3 +1,5 @@
+@import "./variables.scss";
+
 *,
 *::after,
 *::before {
@@ -23,4 +25,43 @@ button {
 
 ul {
   list-style: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+
+.button {
+  background: -moz-linear-gradient(
+    90deg,
+    rgb(113, 8, 30) 0%,
+    rgb(215, 72, 92) 100%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    rgb(113, 8, 30) 0%,
+    rgb(215, 72, 92) 100%
+  );
+  background: -ms-linear-gradient(
+    90deg,
+    rgb(113, 8, 30) 0%,
+    rgb(215, 72, 92) 100%
+  );
+  background: linear-gradient(
+    90deg,
+    rgb(113, 8, 30) 0%,
+    rgb(215, 72, 92) 100%
+  ); /* Стандартное свойство для современных браузеров */
+  border: 0;
+  font-family: GilroyBold, sans-serif;
+  letter-spacing: 0.02em;
+  color: $text-color1;
+  transition: all 0.4s;
+
+  &:hover {
+    box-shadow: 0px 5px 9px 1px $box-shadow-color;
+  }
 }
