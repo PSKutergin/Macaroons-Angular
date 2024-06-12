@@ -63,22 +63,8 @@ c5.06-5.064,7.852-11.824,7.852-19.028c0-7.204-2.792-13.96-7.852-19.028L300.188,2
   <section class="container">
     <h1 class="products-title">Выберите свой макарун</h1>
     <section class="products-items">
-      <section class="products-item" *ngFor="let product of products; let i = index"
-        [class.products-item-last]="i === products.length - 1">
-        <section class="products-item-image">
-          <img src="assets/image/{{product.image}}" alt="Macaroon {{i + 1}}">
-        </section>
-        <h3 class="products-item-title">{{product.name}}</h3>
-        <section class="products-item-extra">
-          <section class="products-item-info">
-            <section class="products-item-count">{{product.count}} шт.</section>
-            <section class="products-item-price">{{product.price}} руб.</section>
-          </section>
-          <section class="products-item-action">
-            <button class="button products-item-btn" (click)="addToCart(product, orderElement)">Заказать</button>
-          </section>
-        </section>
-      </section>
+      <comp-product *ngFor="let product of products; let i = index" [product]="product" [index]="i"
+        [length]="products.length" (addToCartEvent)="addToCart($event, orderElement)"></comp-product>
     </section>
   </section>
 </article>
