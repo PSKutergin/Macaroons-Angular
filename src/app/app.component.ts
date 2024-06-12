@@ -7,7 +7,7 @@ import { AdvantagesComponent } from './components/advantages/advantages.componen
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  providers: [ProductService]
+  providers: [ProductService],
 })
 export class AppComponent implements OnInit {
   @ViewChild('advantagesElement', { static: false }) advantagesElement!: AdvantagesComponent;

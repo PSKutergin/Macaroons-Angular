@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -7,6 +7,9 @@ import { FormsModule } from '@angular/forms';
 import { AdvantagesComponent } from './components/advantages/advantages.component';
 import { AdvantageItemComponent } from './components/advantage-item/advantage-item.component';
 import { ProductComponent } from './components/product/product.component';
+import { CustomCurrencyPipe } from './pipes/currency-format.pipe';
+import { CurrencyPipe } from '@angular/common';
+import { TruncateTextPipe } from './pipes/truncate-text.pipe';
 
 @NgModule({
   declarations: [
@@ -14,13 +17,18 @@ import { ProductComponent } from './components/product/product.component';
     AdvantagesComponent,
     AdvantageItemComponent,
     ProductComponent,
+    CustomCurrencyPipe,
+    TruncateTextPipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    CurrencyPipe,
+    { provide: LOCALE_ID, useValue: 'ru' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
