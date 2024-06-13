@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProductType } from 'src/types/product.type';
 import { ProductService } from './services/product.service';
 import { AdvantagesComponent } from './components/advantages/advantages.component';
+import { CartService } from './services/cart.service';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +23,8 @@ export class AppComponent implements OnInit {
     phone: '',
   }
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService,
+    public cartService: CartService) { }
 
   ngOnInit(): void {
     this.products = this.productService.getProducts();
@@ -36,8 +38,9 @@ export class AppComponent implements OnInit {
     }
   }
 
-  addToCart(product: ProductType, target: HTMLElement): void {
-    this.scrollTo(target);
-    this.formValues.productTitle = product.name.toUpperCase();
+  addToCart(product: ProductType): void {
+    this.cartService.count++;
+    this.cartService.amount += product.price;
+    alert(`${product.name} добавлен в корзину!`);
   }
 }

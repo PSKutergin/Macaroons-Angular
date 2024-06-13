@@ -29,6 +29,7 @@ export class ProductComponent implements OnInit {
   }
 
   addProductToCart(): void {
+    this.product.count--;
     this.addToCartEvent.emit(this.product);
   }
 

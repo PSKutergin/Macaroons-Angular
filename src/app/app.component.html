@@ -65,7 +65,7 @@ c5.06-5.064,7.852-11.824,7.852-19.028c0-7.204-2.792-13.96-7.852-19.028L300.188,2
     <h1 class="products-title">Выберите свой макарун</h1>
     <section class="products-items">
       <comp-product *ngFor="let product of products; let i = index" [product]="product" [index]="i"
-        [length]="products.length" (addToCartEvent)="addToCart($event, orderElement)"></comp-product>
+        [length]="products.length" (addToCartEvent)="addToCart($event)"></comp-product>
     </section>
   </section>
 </article>
@@ -136,7 +136,7 @@ c5.06-5.064,7.852-11.824,7.852-19.028c0-7.204-2.792-13.96-7.852-19.028L300.188,2
 <section class="present" (mouseover)="showPresent = true" (mouseout)="showPresent = false">
   <img src="assets/image/cart.png" alt="Present">
   <section class="speech" [class.show]="showPresent">
-    Корзина пуста
+    {{cartService.amount ? (cartService.amount | customCurrency) : 'Корзина пуста'}}
   </section>
-  <section class="cart-counter">2</section>
+  <section class="cart-counter" *ngIf="cartService.count">{{cartService.count}}</section>
 </section>

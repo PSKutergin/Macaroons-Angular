@@ -10,26 +10,26 @@ export class ProductService {
     return [
       {
         name: 'Макарун с малиной',
-        count: 1,
-        price: 1.70,
+        count: 10,
+        price: 1.90,
         image: 'mac1.png'
       },
       {
         name: 'Макарун с манго',
-        count: 1,
-        price: 1.70,
+        count: 15,
+        price: 1.85,
         image: 'mac2.png'
       },
       {
         name: 'Пирог с ванилью',
-        count: 1,
-        price: 1.70,
+        count: 12,
+        price: 1.50,
         image: 'mac3.png'
       },
       {
         name: 'Пирог с фисташками',
-        count: 1,
-        price: 1.70,
+        count: 20,
+        price: 1.95,
         image: 'mac4.png'
       }
     ];
