@@ -10,6 +10,7 @@ import { ProductComponent } from './components/product/product.component';
 import { CustomCurrencyPipe } from './pipes/currency-format.pipe';
 import { CurrencyPipe } from '@angular/common';
 import { TruncateTextPipe } from './pipes/truncate-text.pipe';
+import { PhoneFormatPipe } from './pipes/phone-format.pipe';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { TruncateTextPipe } from './pipes/truncate-text.pipe';
     ProductComponent,
     CustomCurrencyPipe,
     TruncateTextPipe,
+    PhoneFormatPipe,
   ],
   imports: [
     BrowserModule,

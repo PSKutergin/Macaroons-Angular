@@ -26,7 +26,7 @@ c5.06-5.064,7.852-11.824,7.852-19.028c0-7.204-2.792-13.96-7.852-19.028L300.188,2
         <li class="menu-item"><a (click)="scrollTo(orderElement)">Оформить заказ</a></li>
       </ul>
     </nav>
-    <span class="phone">{{phoneNumber}}</span>
+    <span class="phone">{{phoneNumber | phoneFormat}}</span>
     <section class="burger" id="burger">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40px" height="22px">
         <path fill-rule="evenodd" fill="rgb(130, 19, 40)"
@@ -128,7 +128,7 @@ c5.06-5.064,7.852-11.824,7.852-19.028c0-7.204-2.792-13.96-7.852-19.028L300.188,2
       </svg>
       <span>Мы в Instagram</span>
     </a>
-    <span class="phone">{{phoneNumber}}</span>
+    <span class="phone">{{phoneNumber | phoneFormat}}</span>
   </section>
 </footer>
 

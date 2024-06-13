@@ -12,7 +12,7 @@ import { AdvantagesComponent } from './components/advantages/advantages.componen
 export class AppComponent implements OnInit {
   @ViewChild('advantagesElement', { static: false }) advantagesElement!: AdvantagesComponent;
 
-  phoneNumber = '+375 (29) 368-98-68';
+  phoneNumber = '375293689868';
   instagramLink = 'https://www.instagram.com/macaroons/';
   showPresent = false;
   products: ProductType[] = [];
