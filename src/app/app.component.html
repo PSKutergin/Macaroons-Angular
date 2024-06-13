@@ -48,7 +48,8 @@ c5.06-5.064,7.852-11.824,7.852-19.028c0-7.204-2.792-13.96-7.852-19.028L300.188,2
         Побалуйте себя и своих близких самыми вкусными и ароматными домашними пироженками Macaroon!
       </section>
       <section class="main-info-action">
-        <button class="button main-info-btn" (click)="scrollTo(productsElement)">Выбрать макарун</button>
+        <button class="button main-info-btn" (click)="scrollTo(productsElement)" appHoverBackground>Выбрать
+          макарун</button>
       </section>
     </section>
     <section class="main-image">
@@ -92,7 +93,7 @@ c5.06-5.064,7.852-11.824,7.852-19.028c0-7.204-2.792-13.96-7.852-19.028L300.188,2
           <p class="error-input">Необходимо ввести имя</p>
           <input name="phone" type="text" placeholder="+375 (__) ___ - __ - __" [(ngModel)]="formValues.phone">
           <p class="error-input">Необходимо ввести номер телефона</p>
-          <button type="button" class="button order-form-btn">Оформить заказ</button>
+          <button type="button" class="button order-form-btn" appHoverBackground>Оформить заказ</button>
         </section>
       </section>
     </form>
